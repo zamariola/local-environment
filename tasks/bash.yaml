@@ -1,4 +1,6 @@
 - name: Insert custom bash configs on bashrc file 
+  tags:
+    - configurations
   blockinfile:
     path: ~/.bashrc
     insertafter: EOF

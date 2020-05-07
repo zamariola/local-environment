@@ -1,10 +1,14 @@
 - name: Install git
+  tags:
+    - packages
   become_user: root
   dnf:
     name: git
     state: latest
 
-- name: Insert custom git configs on bashrc file 
+- name: Insert custom git configs on bashrc file
+  tags:
+      - configurations 
   blockinfile:
     path: ~/.bashrc
     insertafter: EOF

@@ -1,0 +1,30 @@
+- name: Update all packages
+  tags:
+    - packages
+  become_user: root
+  dnf:
+    name: "*"
+    state: latest
+
+- name: Install standalone packages
+  tags:
+    - packages
+  become_user: root
+  dnf:
+    name:
+      - htop
+      - autoconf
+      - automake
+      - ant
+      - maven
+      - jq
+      - gcc
+      - patch
+      - libgomp
+      - glibc-headers
+      - glibc-devel
+      - kernel-headers
+      - kernel-devel
+      - dkms
+      - psensor
+    state: latest

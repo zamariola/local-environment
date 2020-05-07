@@ -1,4 +1,6 @@
-- name: Insert custom hybris alias on bashrc file 
+- name: Insert custom hybris alias on bashrc file
+  tags:
+    - configurations
   blockinfile:
     path: ~/.bashrc
     insertafter: EOF
