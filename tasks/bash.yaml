@@ -1,0 +1,10 @@
+- name: Insert custom bash configs on bashrc file 
+  blockinfile:
+    path: ~/.bashrc
+    insertafter: EOF
+    marker: "#{mark} ANSIBLE BASH MANAGED BLOCK"
+    block: |
+      export HISTFILESIZE=
+      export HISTSIZE=
+      export HISTTIMEFORMAT="[%F %T] "
+      export HISTCONTROL=ignoreboth

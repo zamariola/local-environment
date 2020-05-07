@@ -1,0 +1,8 @@
+- name: Install terminator
+  become_user: root
+  dnf:
+    name: terminator
+    state: latest
+
+- name: Copy terminator config folder
+  command: cp -r tasks/configs/terminator ~/.config/

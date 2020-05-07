@@ -1,0 +1,27 @@
+- name: Install git
+  become_user: root
+  dnf:
+    name: git
+    state: latest
+
+- name: Insert custom git configs on bashrc file 
+  blockinfile:
+    path: ~/.bashrc
+    insertafter: EOF
+    marker: "#{mark} ANSIBLE GIT MANAGED BLOCK"
+    block: |
+      parse_git_branch() {
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+      }
+      export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+      alias gStatus="git status"
+      alias gPullPrune="git fetch origin -p && git pull --rebase"
+      alias gACommit="git add . && git commit -m $1"
+      alias gCommit="git commit -m $1"
+      function gBlame {
+        find -iname "$1" | xargs -I % git blame % -L"$2";
+      }
+      export gBlame;
+      function gFBlame {
+        echo "$1" | rev | cut -d/ -f1 | rev | cut -d: -f1 | tr ":" " " | xargs find -iname | xargs git blame;
+      }
