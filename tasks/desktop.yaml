@@ -1,0 +1,16 @@
+- name: Generate cinnamon config from template
+  tags:
+      - configurations
+  template:
+        src: tasks/configs/desktop/cinnamon.dconf.template
+        dest: /tmp/cinnamon.dconf
+
+- name: Import cinnamon config 
+  tags:
+      - configurations
+  shell: dconf load /org/cinnamon/ < /tmp/cinnamon.dconf
+
+- name: Import nemo config 
+  tags:
+      - configurations
+  shell: dconf load /org/nemo/ < tasks/configs/desktop/nemo.dconf

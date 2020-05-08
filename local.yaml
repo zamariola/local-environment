@@ -11,4 +11,5 @@
     - include: tasks/terminator.yaml
     - include: tasks/packages.yaml
     - include: tasks/visual-studio-code.yaml
+    - include: tasks/desktop.yaml
 
