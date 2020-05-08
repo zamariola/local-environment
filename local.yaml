@@ -7,9 +7,10 @@
   tasks:
     - include: tasks/bash.yaml
     - include: tasks/git.yaml
+    - include: tasks/packages.yaml
     - include: tasks/hybris.yaml
     - include: tasks/terminator.yaml
-    - include: tasks/packages.yaml
-    - include: tasks/visual-studio-code.yaml
     - include: tasks/desktop.yaml
+    - include: tasks/visual-studio-code.yaml
+    - include: tasks/golang.yaml
 
