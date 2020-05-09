@@ -56,3 +56,9 @@
     name: '{{ user }}'
     groups: 'docker'
     append: 'yes'
+
+- name: Add firewall rule for docker0 interface
+  tags:
+    - docker
+  become_user: root
+  command: firewall-cmd --permanent --zone=trusted --add-interface=docker0
