@@ -12,4 +12,4 @@ sudo ansible-pull -e user={your-home-user} -U https://github.com/zamariola/local
 ```
 ## Screenshots
 
-![Home screen](https://github.com/zamariola/s.png "Home screen")
+![Home screen](https://raw.githubusercontent.com/zamariola/local-environment/master/doc/local_env.png "Home screen")
