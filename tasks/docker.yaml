@@ -56,9 +56,3 @@
     name: '{{ user }}'
     groups: 'docker'
     append: 'yes'
-
-- name: Activate new group
-  tags:
-    - docker
-  command: newgrp docker
-
