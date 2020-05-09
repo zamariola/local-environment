@@ -1,0 +1,64 @@
+- name: Install dnf plugins core
+  tags:
+    - docker
+  become_user: root
+  dnf:
+    name: dnf-plugins-core
+    state: latest
+
+- name: Install docker repo
+  tags:
+    - docker
+  become_user: root
+  yum_repository:
+    name: Docker-CE-Stable
+    description: EPEL YUM repo
+    file: external_repos
+    baseurl: https://download.docker.com/linux/fedora/31/$basearch/stable
+    gpgkey: gpgkey=https://download.docker.com/linux/fedora/gpg
+    gpgcheck: yes
+    enabled: yes
+
+- name: Install docker
+  tags:
+    - docker
+  become_user: root
+  yum:
+    name: 
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: latest
+    update_cache: yes
+
+- name: Start and enable docker service, if not started
+  tags:
+    - docker
+  become_user: root
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Create docker group
+  tags: 
+    - docker
+  become_user: root
+  group:
+    name: docker
+    state: present
+
+- name: Add user to docker group
+  tags: 
+    - docker
+  become_user: root
+  user:
+    name: '{{ user }}'
+    groups: 'docker'
+    append: 'yes'
+
+- name: Activate new group
+  tags:
+    - docker
+  command: newgrp docker
+
