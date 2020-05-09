@@ -13,4 +13,5 @@
     - include: tasks/desktop.yaml
     - include: tasks/visual-studio-code.yaml
     - include: tasks/golang.yaml
+    - include: tasks/kubectl.yaml
 
