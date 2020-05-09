@@ -35,4 +35,14 @@
     path: /tmp/golang.tar.gz
     state: absent
 
-    
+- name: Create Go user folders
+  tags:
+    - go
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - ~/go
+    - ~/go/src
+    - ~/go/pkg
+    - ~/go/bin
