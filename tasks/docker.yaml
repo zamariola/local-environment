@@ -62,3 +62,33 @@
     - docker
   become_user: root
   command: firewall-cmd --permanent --zone=trusted --add-interface=docker0
+
+- name: Test cgroup version 1
+  tags:
+    - docker2
+  shell: grep -c "unified_cgroup_hierarchy" /etc/default/grub
+  register: test_grep_cgroups
+  ignore_errors: true
+
+- name: Update systemd to cgroups v1
+  tags:
+    - docker2
+  become_user: root
+  lineinfile:
+    path: /etc/default/grub
+    regexp: '(^GRUB_CMDLINE_LINUX=\"[^\"]*)(.*\"$)'
+    line: '\1 systemd.unified_cgroup_hierarchy=0\2'
+    backrefs: yes
+  when: test_grep_cgroups.stdout == "0"
+
+- name: update grub2 config
+  tags:
+    - docker2
+  become_user: root
+  shell: grub2-mkconfig
+  
+- name: Tell user to reboot
+  tags:
+    - docker2
+  debug:
+    msg: "YOU SHOULD RESTART YOUR MACHINE TO CHANGES TAKE EFFECT"
