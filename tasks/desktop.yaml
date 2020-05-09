@@ -14,3 +14,9 @@
   tags:
       - configurations
   shell: dconf load /org/nemo/ < tasks/configs/desktop/nemo.dconf
+
+- name: Increase max fs notify
+  tags:
+    - configurations
+  become_user: root
+  shell: echo fs.inotify.max_user_watches=320000768 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
