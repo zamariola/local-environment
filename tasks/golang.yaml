@@ -20,7 +20,7 @@
     path: /usr/local/go
     state: absent
 
-- name: Unpacking go binaries
+- name: Unpacking Go binaries
   tags:
     - go
   become_user: root
@@ -28,7 +28,7 @@
     src: /tmp/golang.tar.gz
     dest: /usr/local/
 
-- name: Remove tmp binary
+- name: Remove tmp Go binariy
   tags:
     - go
   file:
