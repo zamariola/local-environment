@@ -65,14 +65,14 @@
 
 - name: Test cgroup version 1
   tags:
-    - docker2
+    - docker
   shell: grep -c "unified_cgroup_hierarchy" /etc/default/grub
   register: test_grep_cgroups
   ignore_errors: true
 
 - name: Update systemd to cgroups v1
   tags:
-    - docker2
+    - docker
   become_user: root
   lineinfile:
     path: /etc/default/grub
@@ -83,12 +83,12 @@
 
 - name: update grub2 config
   tags:
-    - docker2
+    - docker
   become_user: root
   shell: grub2-mkconfig
   
 - name: Tell user to reboot
   tags:
-    - docker2
+    - docker
   debug:
     msg: "YOU SHOULD RESTART YOUR MACHINE TO CHANGES TAKE EFFECT"
