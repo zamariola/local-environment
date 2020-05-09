@@ -1,6 +1,6 @@
 # Zama's Local Environment
 
-## Pre-requirements:
+## Pre-requirements
 
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 - [Fedora Cinnamon 32](https://spins.fedoraproject.org/cinnamon/download/index.html)
