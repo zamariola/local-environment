@@ -15,7 +15,7 @@
     description: EPEL YUM repo
     file: external_repos
     baseurl: https://download.docker.com/linux/fedora/31/$basearch/stable
-    gpgkey: gpgkey=https://download.docker.com/linux/fedora/gpg
+    gpgkey: https://download.docker.com/linux/fedora/gpg
     gpgcheck: yes
     enabled: yes
 
