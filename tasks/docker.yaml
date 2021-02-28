@@ -61,7 +61,7 @@
   tags:
     - docker
   become_user: root
-  command: firewall-cmd --permanent --zone=trusted --add-interface=docker0
+  command: firewall-cmd --permanent --zone=docker --add-interface=docker0
 
 - name: Test cgroup version 1
   tags:
