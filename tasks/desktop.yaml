@@ -1,6 +1,7 @@
 - name: Generate cinnamon config from template
   tags:
       - configurations
+      - cinnamon
   template:
         src: tasks/configs/desktop/cinnamon.dconf.template
         dest: /tmp/cinnamon.dconf
@@ -8,11 +9,13 @@
 - name: Import cinnamon config 
   tags:
       - configurations
+      - cinnamon
   shell: dconf load /org/cinnamon/ < /tmp/cinnamon.dconf
 
 - name: Import nemo config 
   tags:
       - configurations
+      - cinnamon
   shell: dconf load /org/nemo/ < tasks/configs/desktop/nemo.dconf
 
 - name: Increase max fs notify
