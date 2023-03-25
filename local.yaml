@@ -5,7 +5,7 @@
   become_user: "{{user}}"
 
   tasks:
-    - include: tasks/bash.yaml
+    - include: tasks/shell.yaml
     - include: tasks/git.yaml
     - include: tasks/packages.yaml
     - include: tasks/hybris.yaml

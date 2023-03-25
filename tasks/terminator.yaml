@@ -1,6 +1,7 @@
 - name: Install terminator
   tags:
     - packages
+    - shell
   become_user: root
   dnf:
     name: terminator

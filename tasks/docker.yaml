@@ -14,7 +14,7 @@
     name: Docker-CE-Stable
     description: EPEL YUM repo
     file: external_repos
-    baseurl: https://download.docker.com/linux/fedora/31/$basearch/stable
+    baseurl: https://download.docker.com/linux/fedora/37/$basearch/stable
     gpgkey: https://download.docker.com/linux/fedora/gpg
     gpgcheck: yes
     enabled: yes
@@ -85,7 +85,7 @@
   tags:
     - docker
   become_user: root
-  shell: grub2-mkconfig
+  shell: grub2-mkconfig -o /boot/grub2/grub.cfg
   
 - name: Tell user to reboot
   tags:

@@ -14,13 +14,13 @@
 3. Execute the playbook
 
 ```bash
-sudo ansible-playbook -e user={your-home-user} -v local.yaml
+sudo ansible-playbook -e user=$(whoami)  -v local.yaml -v --tags "shell"
 ```
 
 ### From an existing environment (WITH git)
 
 ```bash
-sudo ansible-pull -e user={your-home-user} -U https://github.com/zamariola/local-environment.git
+sudo ansible-pull -e user=$(whoami) -U https://github.com/zamariola/local-environment.git -v --tags "shell"
 ```
 ## Screenshots
 

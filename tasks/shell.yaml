@@ -1,0 +1,20 @@
+- name: Install z-shell 
+  tags:
+    - configurations
+    - shell
+  become_user: root
+  dnf:
+    name:
+      - zsh
+
+- name: Download oh-my-z-shell 
+  tags:
+    - configurations
+    - shell
+  get_url: url=https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh dest=/tmp/oh-my-zsh.sh
+
+- name: Install oh-my-z-shell
+  become_user: root
+  command: chmod +x /tmp/oh-my-zsh.sh && sh -c /tmp/oh-my-zsh.sh
+
+
