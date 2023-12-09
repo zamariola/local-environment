@@ -1,0 +1,47 @@
+{
+	"actions": [
+		{
+			"type": "command",
+			"label": "Open in Visual Studio Code",
+			"command_line": "code %F",
+			"filetypes": [
+				"directory",
+				"standard"
+			]
+		},
+		{
+			"type": "command",
+			"label": "Open in Terminator",
+			"command_line": "/usr/bin/terminator --working-directory=%d/%b",
+			"filetypes": [
+				"directory",
+				"standard"
+			]
+		},
+		{
+			"type": "menu",
+			"label": "Copy details",
+			"actions": [
+				{
+					"type": "command",
+					"label": "Copy name",
+					"command_line": "echo -n %B | xclip -f -selection primary | xclip -selection clipboard",
+					"use_shell": true
+				},
+				{
+					"type": "command",
+					"label": "Copy path",
+					"command_line": "echo -n %F | xclip -f -selection primary | xclip -selection clipboard",
+					"use_shell": true
+				},
+				{
+					"type": "command",
+					"label": "Copy URI",
+					"command_line": "echo -n %U | xclip -f -selection primary | xclip -selection clipboard",
+					"use_shell": true
+				}
+			]
+		}
+	],
+	"debug": false
+}
