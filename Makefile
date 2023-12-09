@@ -18,6 +18,7 @@ actions_for_nautilus:
 
 	cp -r configs/actions-for-nautilus ~/.local/share/actions-for-nautilus/
 
+
 zshell:
 	sudo dnf install -y zsh
 	@echo ---------------------------------
@@ -25,5 +26,10 @@ zshell:
 	@echo "When asked about the new shell, type /bin/zsh"
 	@echo ---------------------------------
 	sudo lchsh $(USER)
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	touch ~/.zshrc
+
+oh_my_zsh: zshell
+	wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O /tmp/install.sh
+	chmod +x /tmp/install.sh
+	sh /tmp/install.sh
 	cp configs/zsh/zshrc ~/.zshrc
