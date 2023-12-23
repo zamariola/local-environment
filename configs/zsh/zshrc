@@ -149,3 +149,8 @@ fi
 #### ALISES
 
 alias gcS="git commit -S -m $1"
+
+#### PATH
+export GO_PATH=/usr/local/go/bin
+
+export PATH=$PATH:$GO_PATH
