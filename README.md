@@ -6,11 +6,8 @@
 
 ## How to install
 
-
-### From an existing environment (WITH git)
-
 ```bash
-sudo ansible-pull -e user=$(whoami) -U https://github.com/zamariola/local-environment.git -v --tags "shell"
+make all
 ```
 ## Screenshots
 
