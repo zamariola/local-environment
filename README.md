@@ -2,20 +2,10 @@
 
 ## Pre-requirements
 
-- [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
-- [Fedora Cinnamon 32](https://spins.fedoraproject.org/cinnamon/download/index.html)
+- [Fedora 39](https://getfedora.org)
 
 ## How to install
 
-### From a pure environment (WITHOUT git)
-
-1. Download this repo zipped: https://github.com/zamariola/local-environment/archive/master.zip
-2. Unzip it
-3. Execute the playbook
-
-```bash
-sudo ansible-playbook -e user=$(whoami)  -v local.yaml -v --tags "shell"
-```
 
 ### From an existing environment (WITH git)
 
