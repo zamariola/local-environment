@@ -54,6 +54,7 @@ gnome-extensions:
 	brave-browser https://extensions.gnome.org/extension/3843/just-perfection/
 	brave-browser https://extensions.gnome.org/local/
 	brave-browser https://extensions.gnome.org/extension/5470/weather-oclock/
+	brave-browser https://extensions.gnome.org/extension/906/sound-output-device-chooser/
 
 KUBE_VERSION := $(shell curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
 kubectl:
