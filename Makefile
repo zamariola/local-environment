@@ -11,7 +11,9 @@ packages:
     jq \
     gcc \
     kernel-headers \
-    kernel-devel
+    kernel-devel \
+	gnome-tweaks \
+	fzf
 
 brave:
 	sudo dnf install dnf-plugins-core

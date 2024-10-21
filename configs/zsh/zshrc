@@ -129,6 +129,10 @@ if [ $commands[aws] ]; then
 fi
 
 
+if [ $commands[fzf] ]; then
+    source <(fzf --zsh)
+fi
+
 if which peco &> /dev/null; then
   function peco_select_history() {
     local tac
@@ -144,7 +148,6 @@ if which peco &> /dev/null; then
   zle -N peco_select_history
   bindkey '^R' peco_select_history
 fi
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #### ALISES
 
