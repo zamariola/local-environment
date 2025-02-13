@@ -74,3 +74,11 @@ docker:
 go:
 	wget -O /tmp/go.tar.gz https://go.dev/dl/go1.21.5.linux-amd64.tar.gz
 	sudo tar -C /usr/local -xzf /tmp/go.tar.gz
+
+nvim:
+	sudo dnf install -y neovim python3-neovim
+	mkdir -p ~/.local/share/fonts
+	cd ~/.local/share/fonts && \
+		curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
+	curl -sS https://webi.sh/vim-devicons | sh
+	cp configs/nvim ~/config/nvim

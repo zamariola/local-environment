@@ -152,6 +152,8 @@ fi
 #### ALISES
 
 alias gcS="git commit -S -m $1"
+alias vi="nvim"
+alias v="nvim"
 
 #### PATH
 export GO_PATH=/usr/local/go/bin
