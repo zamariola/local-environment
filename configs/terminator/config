@@ -1,12 +1,12 @@
 [global_config]
   window_state = maximise
-  suppress_multiple_term_dialog = True
+  borderless = True
 [keybindings]
 [profiles]
   [[default]]
+    icon_bell = False
     background_color = "#e5e5e5"
-    cursor_color = "#c8c8c8"
-    font = Monospace 11
+    font = Monospace 10
     foreground_color = "#161616"
     scrollback_infinite = True
     palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
@@ -16,6 +16,7 @@
     [[[child1]]]
       parent = window0
       type = Terminal
+      profile = default
     [[[window0]]]
       parent = ""
       size = 2800, 1000

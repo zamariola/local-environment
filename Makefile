@@ -1,23 +1,22 @@
-all: packages brave terminator actions_for_nautilus zshell oh_my_zsh oh_my_zsh_cfg gnome-extensions kubectl docker go
+all: packages terminator actions_for_nautilus zshell oh_my_zsh oh_my_zsh_cfg gnome-extensions kubectl docker go
 
 packages:
 	sudo dnf update -y
 	sudo dnf install -y \
 	htop \
-    autoconf \
+    	autoconf \
 	automake \
-	ant \
-    maven \
-    jq \
-    gcc \
-    kernel-headers \
-    kernel-devel \
+    	maven \
+    	jq \
+    	gcc \
+    	kernel-headers \
+    	kernel-devel \
 	gnome-tweaks \
 	fzf
 
 brave:
 	sudo dnf install dnf-plugins-core
-	sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+	sudo dnf-3 config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 	sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 	sudo dnf install -y brave-browser
 
@@ -41,10 +40,10 @@ zshell:
 	@echo "Changing default shell to zsh"
 	@echo "When asked about the new shell, type /bin/zsh"
 	@echo ---------------------------------
-	sudo lchsh $(USER)
+	sudo chsh $(USER)
 	touch ~/.zshrc
 
-oh_my_zsh: zshell
+oh_my_zsh:
 	wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O /tmp/install.sh
 	chmod +x /tmp/install.sh
 	sh /tmp/install.sh
@@ -54,7 +53,6 @@ oh_my_zsh_cfg:
 
 gnome-extensions:
 	brave-browser https://extensions.gnome.org/extension/3843/just-perfection/
-	brave-browser https://extensions.gnome.org/local/
 	brave-browser https://extensions.gnome.org/extension/5470/weather-oclock/
 	brave-browser https://extensions.gnome.org/extension/906/sound-output-device-chooser/
 
@@ -65,14 +63,14 @@ kubectl:
 	sudo chmod +x /usr/local/bin/kubectl
 
 docker:
-	sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+	sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 	sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 	sudo systemctl enable docker --now
 	sudo usermod -aG docker $$USER
 	newgrp docker
 
 go:
-	wget -O /tmp/go.tar.gz https://go.dev/dl/go1.21.5.linux-amd64.tar.gz
+	wget -O /tmp/go.tar.gz https://go.dev/dl/go1.24.1.linux-amd64.tar.gz
 	sudo tar -C /usr/local -xzf /tmp/go.tar.gz
 
 nvim:
@@ -82,3 +80,10 @@ nvim:
 		curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
 	curl -sS https://webi.sh/vim-devicons | sh
 	cp configs/nvim ~/config/nvim
+	
+vscode:
+	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+	echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+	dnf check-update
+	sudo dnf install code
+

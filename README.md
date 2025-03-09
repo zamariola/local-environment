@@ -2,7 +2,7 @@
 
 ## Pre-requirements
 
-- [Fedora 39](https://getfedora.org)
+- [Fedora 41](https://getfedora.org)
 
 ## How to install
 
