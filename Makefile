@@ -79,7 +79,8 @@ nvim:
 	cd ~/.local/share/fonts && \
 		curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
 	curl -sS https://webi.sh/vim-devicons | sh
-	cp configs/nvim ~/config/nvim
+	mkdir -p ~/.config/nvim
+	cp -a ./configs/nvim/. ~/.config/nvim/
 	
 vscode:
 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
