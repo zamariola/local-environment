@@ -1,4 +1,4 @@
-all: packages terminator actions_for_nautilus zshell oh_my_zsh oh_my_zsh_cfg gnome-extensions kubectl docker go
+all: packages terminator zshell oh_my_zsh oh_my_zsh_cfg gnome-extensions gnome-config kubectl docker go nvim vscode
 
 packages:
 	sudo dnf update -y
@@ -55,6 +55,11 @@ gnome-extensions:
 	brave-browser https://extensions.gnome.org/extension/3843/just-perfection/
 	brave-browser https://extensions.gnome.org/extension/5470/weather-oclock/
 	brave-browser https://extensions.gnome.org/extension/906/sound-output-device-chooser/
+	brave-browser https://extensions.gnome.org/extension/5090/space-bar/
+	brave-browser https://extensions.gnome.org/extension/6281/wallpaper-slideshow/
+
+gnome-config:
+	dconf load / < ./configs/gnome/gnome-settings.conf
 
 KUBE_VERSION := $(shell curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
 kubectl:
@@ -81,7 +86,7 @@ nvim:
 	curl -sS https://webi.sh/vim-devicons | sh
 	mkdir -p ~/.config/nvim
 	cp -a ./configs/nvim/. ~/.config/nvim/
-	
+
 vscode:
 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 	echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
