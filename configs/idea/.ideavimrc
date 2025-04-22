@@ -1,0 +1,15 @@
+let mapleader = " "
+
+nnoremap <leader>r :source ~/.ideavimrc<CR>
+nnoremap <leader>a :action Annotate<CR>
+
+# debug
+nnoremap <leader>dc :action Debug<CR>
+nnoremap <leader>dr :action Rerun<CR>
+nnoremap <leader>ds :action Stop<CR>
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+
+# editor
+nnoremap <leader>e :action ActivateEditorComponent<CR>
+nnoremap <leader>or :action $LRU<CR>
+

@@ -93,3 +93,6 @@ vscode:
 	dnf check-update
 	sudo dnf install code
 
+ideavim:
+	cp configs/ideavim/.ideavimrc ~/.ideavimrc
+
