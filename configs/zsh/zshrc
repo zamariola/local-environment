@@ -150,12 +150,25 @@ if which peco &> /dev/null; then
 fi
 
 #### ALISES
-
 alias gcS="git commit -S -m $1"
 alias vi="nvim"
 alias v="nvim"
+alias dcup="docker compose up"
+alias dcdown="docker compose down"
+alias dcbuild="docker compose build"
+alias dcrm="docker compose rm -f"
+alias dcall="dcrm && dcbuild && dcup"
+
+#### ENV
+touch ~/.config/.env
+source ~/.config/.env
+export EDITOR=vi
 
 #### PATH
 export GO_PATH=/usr/local/go/bin
+export HOME_GO_PATH=~/go/bin
+export GOLAND_PATH=~/Documents/apps/GoLand-2024.3.5/bin
+export ANDROID_PLAT_TOOLS_PATH=~/Android/Sdk/platform-tools/
+export ANDROID_EMU_PATH=~/Android/Sdk/emulator/
 
-export PATH=$PATH:$GO_PATH
+export PATH=$PATH:$GO_PATH:$HOME_GO_PATH:$GOLAND_PATH:$ANDROID_PLAT_TOOLS_PATH:$ANDROID_EMU_PATH
