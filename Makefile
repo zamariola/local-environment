@@ -94,5 +94,5 @@ vscode:
 	sudo dnf install code
 
 ideavim:
-	cp configs/ideavim/.ideavimrc ~/.ideavimrc
+	cp configs/idea/.ideavimrc ~/.ideavimrc
 
