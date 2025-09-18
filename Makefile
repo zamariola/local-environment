@@ -5,12 +5,13 @@ packages:
 	sudo dnf install -y \
 	htop \
     	autoconf \
-	automake \
+			automake \
     	maven \
     	jq \
     	gcc \
     	kernel-headers \
     	kernel-devel \
+			vlc \
 	gnome-tweaks \
 	fzf
 
@@ -57,6 +58,7 @@ gnome-extensions:
 	brave-browser https://extensions.gnome.org/extension/906/sound-output-device-chooser/
 	brave-browser https://extensions.gnome.org/extension/5090/space-bar/
 	brave-browser https://extensions.gnome.org/extension/6281/wallpaper-slideshow/
+	brave-browser https://extensions.gnome.org/extension/615/appindicator-support/
 
 gnome-config:
 	dconf load / < ./configs/gnome/gnome-settings.conf
@@ -75,7 +77,7 @@ docker:
 	newgrp docker
 
 go:
-	wget -O /tmp/go.tar.gz https://go.dev/dl/go1.24.1.linux-amd64.tar.gz
+	wget -O /tmp/go.tar.gz https://go.dev/dl/go1.25.1.linux-amd64.tar.gz
 	sudo tar -C /usr/local -xzf /tmp/go.tar.gz
 
 nvim:
