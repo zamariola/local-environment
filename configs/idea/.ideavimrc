@@ -13,3 +13,68 @@ nnoremap <leader>db :action ToggleLineBreakpoint<CR>
 nnoremap <leader>e :action ActivateEditorComponent<CR>
 nnoremap <leader>or :action $LRU<CR>
 
+# navigation
+nnoremap <C-h> :action MoveFocusLeft<CR>
+nnoremap <C-j> :action MoveFocusDown<CR>
+nnoremap <C-k> :action MoveFocusUp<CR>
+nnoremap <C-l> :action MoveFocusRight<CR>
+
+nnoremap <S-h> :action PreviousTab<CR>
+nnoremap <S-l> :action NextTab<CR>
+
+nnoremap <leader>bb :action Switcher<CR>
+nnoremap <leader>`  :action Switcher<CR>
+nnoremap <leader>bd :action CloseContent<CR>
+nnoremap <leader>bo :action CloseOtherEditors<CR>
+nnoremap <leader>bD :action CloseEditor<CR>
+
+
+nnoremap / :action Find<CR>
+nnoremap <esc> :nohlsearch<CR>
+nnoremap <leader><space> :action GotoFile<CR>
+nnoremap <leader>,       :action Switcher<CR>
+nnoremap <leader>.       :action ScratchFile<CR>
+nnoremap <leader>/       :action FindInPath<CR>
+nnoremap <leader>:       :action RecentCommands<CR>
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+
+nnoremap <leader>fb :action Switcher<CR>
+nnoremap <leader>fB :action Switcher<CR>
+nnoremap <leader>fc :action SearchEverywhere<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fF :action GotoFile<CR>
+nnoremap <leader>fg :action GotoFile<CR>  " (GoLand doesn’t distinguish git-files)
+nnoremap <leader>fp :action RecentProjects<CR>
+nnoremap <leader>fr :action RecentFiles<CR>
+nnoremap <leader>fR :action RecentFiles<CR>
+
+nnoremap <leader>n  :action ShowNotifications<CR>
+nnoremap <leader>S  :action ScratchFile<CR>
+
+nnoremap <leader>s" :action ShowClipboard<CR>
+nnoremap <leader>s/ :action RecentFindUsages<CR>
+nnoremap <leader>sa :action ShowUsages<CR>
+nnoremap <leader>sb :action Find<CR>
+nnoremap <leader>sB :action FindInPath<CR>
+nnoremap <leader>sc :action RecentCommands<CR>
+nnoremap <leader>sC :action GotoAction<CR>
+nnoremap <leader>sd :action ShowErrorDescription<CR>
+nnoremap <leader>sD :action ShowErrorDescription<CR>
+nnoremap <leader>sg :action FindInPath<CR>
+nnoremap <leader>sG :action FindInPath<CR>
+nnoremap <leader>sh :action HelpTopics<CR>
+nnoremap <leader>sH :action HighlightUsagesInFile<CR>
+nnoremap <leader>si :action QuickImplementations<CR>
+nnoremap <leader>sj :action JumpToLastChange<CR>
+nnoremap <leader>sk :action ShowIntentionActions<CR>
+nnoremap <leader>sl :action ProblemsView.Show<CR>
+nnoremap <leader>sm :action ShowBookmarks<CR>
+nnoremap <leader>sM :action ShowDocumentation<CR>
+nnoremap <leader>sp :action PluginsConfigurable<CR>
+nnoremap <leader>sq :action ProblemsView.Show<CR>
+nnoremap <leader>sR :action RecentFiles<CR>
+nnoremap <leader>su :action Undo<CR>
+nnoremap <leader>sw :action FindInPath<CR>
+vnoremap <leader>sw :action FindInPathCR>
+nnoremap <leader>sW :action FindInPath<CR>
+vnoremap <leader>sW :action FindInPath<CR>

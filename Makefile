@@ -98,3 +98,7 @@ vscode:
 ideavim:
 	cp configs/idea/.ideavimrc ~/.ideavimrc
 
+video:
+	flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
+	flatpak install flathub org.kde.kdenlive
+	flatpak install flathub com.obsproject.Studio
