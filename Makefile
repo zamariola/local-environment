@@ -59,6 +59,7 @@ gnome-extensions:
 	brave-browser https://extensions.gnome.org/extension/5090/space-bar/
 	brave-browser https://extensions.gnome.org/extension/6281/wallpaper-slideshow/
 	brave-browser https://extensions.gnome.org/extension/615/appindicator-support/
+	brave-browser https://extensions.gnome.org/extension/3193/blur-my-shell/
 
 gnome-config:
 	dconf load / < ./configs/gnome/gnome-settings.conf
