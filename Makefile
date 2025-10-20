@@ -1,4 +1,7 @@
-all: packages terminator zshell oh_my_zsh oh_my_zsh_cfg gnome-extensions gnome-config kubectl docker go nvim vscode
+ZELLIJ_VERSION := v0.43.1
+GO_VERSION := 1.25.3
+
+all: packages alacritty zellij zshell oh_my_zsh oh_my_zsh_cfg gnome-extensions gnome-config kubectl docker go nvim vscode
 
 packages:
 	sudo dnf update -y
@@ -13,13 +16,23 @@ packages:
     	kernel-devel \
 			vlc \
 	gnome-tweaks \
-	fzf
+	fzf \
+	yazi
 
 brave:
 	sudo dnf install dnf-plugins-core
 	sudo dnf-3 config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 	sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 	sudo dnf install -y brave-browser
+
+alacritty:
+	sudo dnf install alacritty
+	git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+	cp -r configs/alacritty ~/.config/
+
+zellij:
+	wget https://github.com/zellij-org/zellij/releases/download/$(ZELLIJ_VERSION)/zellij-x86_64-unknown-linux-musl.tar.gz -O /tmp/zellij.tar.gz
+	sudo tar -C /usr/local/bin/ -xzf /tmp/zellij.tar.gz
 
 terminator:
 	sudo dnf install -y terminator
@@ -78,7 +91,7 @@ docker:
 	newgrp docker
 
 go:
-	wget -O /tmp/go.tar.gz https://go.dev/dl/go1.25.1.linux-amd64.tar.gz
+	wget -O /tmp/go.tar.gz https://go.dev/dl/go$(GO_VERSION).linux-amd64.tar.gz
 	sudo tar -C /usr/local -xzf /tmp/go.tar.gz
 
 nvim:

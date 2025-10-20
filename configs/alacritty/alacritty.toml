@@ -1,0 +1,12 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/seoul256-light.toml"
+]
+
+[window]
+decorations = "none"
+startup_mode = "Maximized"
+
+
+[font]
+size = 10

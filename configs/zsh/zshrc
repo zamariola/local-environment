@@ -128,10 +128,16 @@ if [ $commands[aws] ]; then
     complete -C '/usr/local/bin/aws_completer' aws
 fi
 
-
 if [ $commands[fzf] ]; then
     source <(fzf --zsh)
 fi
+
+[ "$TERM" != alacritty ] || eval "$(zellij setup --generate-auto-start bash)"
+
+if [ $commands[zoxide] ]; then
+    eval "$(zoxide init zsh)"
+fi
+
 
 if which peco &> /dev/null; then
   function peco_select_history() {
