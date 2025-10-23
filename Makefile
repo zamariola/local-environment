@@ -27,7 +27,6 @@ brave:
 
 alacritty:
 	sudo dnf install alacritty
-	git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 	cp -r configs/alacritty ~/.config/
 
 zellij:
