@@ -132,8 +132,6 @@ if [ $commands[fzf] ]; then
     source <(fzf --zsh)
 fi
 
-[ "$TERM" != alacritty ] || eval "$(zellij setup --generate-auto-start bash)"
-
 if [ $commands[zoxide] ]; then
     eval "$(zoxide init zsh)"
 fi
