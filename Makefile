@@ -111,6 +111,9 @@ vscode:
 ideavim:
 	cp configs/idea/.ideavimrc ~/.ideavimrc
 
+k9s:
+	cp -r configs/k9s ~/.config/k9s
+
 video:
 	flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
 	flatpak install flathub org.kde.kdenlive
