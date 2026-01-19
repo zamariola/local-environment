@@ -17,7 +17,7 @@ packages:
 			vlc \
 	gnome-tweaks \
 	fzf \
-	yazi
+	yazi --skip-unavailable
 
 brave:
 	sudo dnf install dnf-plugins-core
@@ -75,6 +75,9 @@ gnome-extensions:
 
 gnome-config:
 	dconf load / < ./configs/gnome/gnome-settings.conf
+
+zoxide:
+	curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 KUBE_VERSION := $(shell curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
 kubectl:
