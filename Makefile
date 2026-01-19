@@ -1,7 +1,7 @@
 ZELLIJ_VERSION := v0.43.1
 GO_VERSION := 1.25.3
 
-all: packages alacritty zellij zshell oh_my_zsh oh_my_zsh_cfg gnome-extensions gnome-config kubectl docker go nvim vscode
+all: packages terminator zshell oh_my_zsh oh_my_zsh_cfg gnome-extensions gnome-config zoxide kubectl docker go nvim vscode bruno k9s
 
 packages:
 	sudo dnf update -y
@@ -17,6 +17,7 @@ packages:
 			vlc \
 	gnome-tweaks \
 	fzf \
+	k9s \
 	yazi --skip-unavailable
 
 brave:
@@ -116,6 +117,9 @@ ideavim:
 
 k9s:
 	cp -ra configs/k9s/. ~/.config/k9s
+
+bruno:
+	flatpak install flathub com.usebruno.Bruno
 
 video:
 	flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
