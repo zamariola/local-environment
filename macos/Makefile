@@ -76,6 +76,8 @@ nvim-config:
 ides:
 	brew install --cask bruno
 	brew install --cask visual-studio-code
+	brew install --cask android-studio
+	brew install --cask dbeaver-community
 
 # K9s and K9s light theme config
 k9s:
@@ -91,5 +93,4 @@ docker:
 	brew install colima
 
 java:
-	brew install --cask android-studio
 	brew install openjdk
