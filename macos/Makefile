@@ -59,6 +59,7 @@ oh_my_zsh_cfg:
 cli-utils:
 	curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 	brew install fzf
+	brew install ripgrep
 
 # Nvim and LazyVim config
 nvim:
