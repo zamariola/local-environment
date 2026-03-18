@@ -168,6 +168,10 @@ touch ~/.config/.env
 source ~/.config/.env
 export EDITOR=vi
 
+if [ $commands[hx] ]; then
+    export EDITOR=hx
+fi
+
 #### PATH
 export GO_PATH=/usr/local/go/bin
 export HOME_GO_PATH=~/go/bin

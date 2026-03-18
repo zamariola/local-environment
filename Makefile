@@ -117,6 +117,10 @@ vscode:
 ideavim:
 	cp configs/idea/.ideavimrc ~/.ideavimrc
 
+helix:
+	sudo dnf install helix
+	cp -r configs/helix ~/.config/helix
+
 k9s:
 	cp -ra configs/k9s/. ~/.config/k9s
 

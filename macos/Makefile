@@ -73,6 +73,11 @@ nvim-config:
 	mkdir -p ~/.config/nvim
 	cp -a ../configs/nvim/. ~/.config/nvim/
 
+helix:
+	brew install --cask helix
+	cp -r ../configs/helix ~/.config/helix
+
+
 # IDEs
 ides:
 	brew install --cask bruno

@@ -1,0 +1,41 @@
+theme = "catppuccin_latte"
+
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+true-color = true
+bufferline = "always"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+character = "┊"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = false
+
+[editor.statusline]
+left = ["mode", "spacer", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+
+[keys.normal]
+# Quick buffer switching
+"C-j" = "jump_view_down"
+"C-k" = "jump_view_up"
+"C-l" = ":bn"      # Ctrl + l for next buffer
+"C-h" = ":bp"      # Ctrl + h for previous buffer
+"*" = ["move_prev_word_start", "move_next_word_end", "search_selection", "search_next"]
+
+[keys.normal.space]
+i = ":toggle lsp.display-inlay-hints"
+f = "file_picker"
+
+[keys.normal.space.space]
+b = [":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"]
