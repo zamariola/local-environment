@@ -22,6 +22,7 @@ desktop:
 	brew install --cask nikitabobko/tap/aerospace
 	cp .aerospace.toml ~/.aerospace.toml
 	brew install --cask alfred
+	defaults write com.apple.finder QuitMenuItem -bool true
 	@echo "===== configuration ===="
 	@echo "Go to System > Keyboard > Keyboard Shortcuts > Spotlight and disable the Search"
 
