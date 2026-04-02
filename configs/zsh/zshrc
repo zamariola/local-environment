@@ -157,6 +157,7 @@ fi
 alias gcS="git commit -S -m $1"
 alias vi="nvim"
 alias v="nvim"
+alias y="yazi"
 alias dcup="docker compose up"
 alias dcdown="docker compose down"
 alias dcbuild="docker compose build"
