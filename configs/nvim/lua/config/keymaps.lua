@@ -20,3 +20,7 @@ vim.keymap.set("v", "<leader>sg", function()
     args = { "--fixed-strings" },
   })
 end, { desc = "Grep Selection" })
+
+vim.keymap.set("n", "<leader>gt", function()
+  require("gitsigns").blame()
+end, { desc = "Toggle Git Blame" })
